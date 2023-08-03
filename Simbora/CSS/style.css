@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* container de home, destinos e contato */
+
+#home .container,
+#destinos .container,
+#contato .container{
+    padding: 2rem;
+}
+
+/* Cabeçalho e menu*/
+
+header{
+    background-color: #f3f3f3;
+}
+
+.navbar-brand {
+    cursor: pointer;
+}
+
+.navbar-brand a{
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar-brand img{
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+header .container .navbar .navbar-nav a:hover{
+    border-bottom: 1px solid #000;
+    color: #000;
+}
+
+/* Home */
+
+#home{
+    background-image: url(../imagens/beach-666122_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+}
+
+/*Destinos*/
+
+#destinos .cards .card img{
+    height: 20rem;
+}
+
+#destinos .cards .card{
+    background-color: #f3f3f3;
+    border: 0.15rem solid #000 ;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+/* Promoções */
+
+#promocao .container h2{
+    margin-bottom: 2rem;
+}
+
+#promocao button span{
+    background-color: #000;
+}
+
+#promocao .carousel-item img{
+    height: 40rem;
+}
+
+#promocao .carousel-item h5,
+#promocao .carousel-item p{
+    color: #000;
+    background-color: #fff;
+}
+
+#promocao .carousel-item .risco{
+    text-decoration: line-through;
+}
+
+/* Contato */
+
+#contato .container .card{
+    margin: 1rem;
+}
+
+#contato .container form textarea{
+    resize: none;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+}
+
+#contato .container .card{
+    border: 0.15rem solid #000;
+}
+
+#contato .container .card-body a{
+    text-decoration: none;
+}
+
+/* Rodapé */
+
+footer{
+    background-color:  #f3f3f3;
+    height: 10rem;
+}
