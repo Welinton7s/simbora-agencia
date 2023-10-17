@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+section{
+    min-height: 90vh;
+}
+
 /* container de home, destinos e contato */
 
 #home .container,
@@ -39,14 +43,26 @@ header .container .navbar .navbar-nav a:hover{
 
 /* Home */
 
-#home{
+#home, #cadastro, #destinos, #contato, #promocao{
     background-image: url(../imagens/beach-666122_1280.jpg);
     background-size: cover;
     background-position: center;
-    min-height: 90vh;
+}
+
+
+.login{
+    margin-bottom: 1rem;
+}
+
+.login, .cadastrar{
+    background-color: #f3f3f3;
 }
 
 /*Destinos*/
+
+#destinos .container{
+    color: #fff;
+}
 
 #destinos .cards .card img{
     height: 20rem;
@@ -60,6 +76,10 @@ header .container .navbar .navbar-nav a:hover{
 }
 
 /* Promoções */
+
+#promocao .container{
+    color: #fff;
+}
 
 #promocao .container h2{
     margin-bottom: 2rem;
@@ -85,6 +105,10 @@ header .container .navbar .navbar-nav a:hover{
 
 /* Contato */
 
+#contato .container{
+    color: #fff;
+}
+
 #contato .container .card{
     margin: 1rem;
 }
@@ -102,6 +126,16 @@ header .container .navbar .navbar-nav a:hover{
 
 #contato .container .card-body a{
     text-decoration: none;
+}
+
+/*cadastro*/
+
+#cadastro .container{
+    color: #fff;
+}
+
+#cadastro .container .d-flex{
+    padding-top: 2rem;
 }
 
 /* Rodapé */
