@@ -1,38 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Simbora</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
     <!--Inicio do cabeçalho-->
     <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark>
-                <div class="container-fluid" >
-                    <div class="navbar-brand d-flex align-items-center">
-                      <a href="../HTML/index.html">SIMBORA</a>
-                      <img src="../imagens/travel-6913775_1280.png" alt="Logo do Simbora">
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                    <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent">
-                        <!--Inicio do menu-->
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="../HTML/index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../HTML/destinos.html">Destinos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../HTML/promocao.html">Promoções</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../HTML/contato.html">Contato</a></li>
-                        </ul>
-                        <!--Fim do menu-->
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <%@ include file="components/menu.jsp" %>
     </header>
     <!--Fim do cabeçalho-->
     <main>
@@ -47,12 +26,12 @@
                     <div class="login card-body d-flex flex-column align-items-center border border-dark border-3">
                         <h2>Acessar</h2>
                         <p>“Entre no Mundo de Aventuras!  Faça login na sua conta e comece a jornada dos seus sonhos.” 😊</p>
-                        <a href="login.html" class="btn btn-success">Acessar</a>
+                        <a href="views/cliente/login.jsp" class="btn btn-success">Acessar</a>
                     </div>
                     <div class="cadastrar card-body d-flex flex-column align-items-center border border-dark border-3">
                         <h2>Cadastrar</h2>
                         <p>“Descubra o Mundo, Comece Aqui!  Cadastre-se na nossa agência de viagens e embarque na viagem dos seus sonhos.” 😊</p>
-                        <a href="cadastro.html" class="btn btn-success">Cadastra-se</a>
+                        <a href="views/cliente/cadastro.jsp" class="btn btn-success">Cadastra-se</a>
                     </div>
                 </div>
             </div>

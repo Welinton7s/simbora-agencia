@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Simbora</name>
+	<name>SimboraMVC</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -30,7 +30,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1699404936260</id>
+			<id>1699404936271</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
