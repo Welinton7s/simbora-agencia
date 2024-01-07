@@ -18,9 +18,14 @@ public class ClientesController {
     @Autowired
     private ClientesRepository clienteRepository;
     
-    @RequestMapping("/cadastro")
+    @GetMapping("/clientes/cadastro")
     public String cadastro() {
-        return "clientes/cadastro";
+        return "views/clientes/cadastro";
+    }
+    
+    @GetMapping("/clientes/login")
+    public String login() {
+        return "views/clientes/login";
     }
 
     @PostMapping("/clientes")
@@ -29,7 +34,7 @@ public class ClientesController {
         return clienteRepository.save(cliente);
     }
 
-    @PostMapping("/clientes/cadastrar")
+    @PostMapping("/clientes/login")
     public String cadastrar(@RequestParam String nome, @RequestParam String email, @RequestParam String senha, @RequestParam String telefone) {
         // Crie um novo objeto Clientes com os dados do formulário
         Clientes cliente = new Clientes();
@@ -42,8 +47,9 @@ public class ClientesController {
         clienteRepository.save(cliente);
 
         // Redirecione para a página de login
-        return "redirect:/login.html";
+        return "views/clientes/login";
     }
+
     
     @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String senha, Model model) {

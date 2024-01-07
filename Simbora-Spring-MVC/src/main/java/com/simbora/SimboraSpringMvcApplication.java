@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"curso*"})
+@ComponentScan(basePackages= {"simbora*"})
 public class SimboraSpringMvcApplication {
 
 	public static void main(String[] args) {
