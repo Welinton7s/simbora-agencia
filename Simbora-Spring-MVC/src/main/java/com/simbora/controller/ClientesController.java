@@ -51,7 +51,7 @@ public class ClientesController {
     }
 
     
-    @PostMapping("/login")
+    @PostMapping("/destinos/destinos")
     public String login(@RequestParam String email, @RequestParam String senha, Model model) {
         // Busque o cliente no banco de dados pelo email
         Clientes cliente = clienteRepository.findByEmail(email);
@@ -59,11 +59,11 @@ public class ClientesController {
         // Verifique se o cliente existe e a senha está correta
         if (cliente != null && cliente.getSenha().equals(senha)) {
             // Login bem-sucedido, redirecione para a página de destinos
-            return "redirect:/views/destinos.html";
+            return "views/destinos/destinos";
         } else {
             // Login falhou, retorne à página de login com uma mensagem de erro
         	 model.addAttribute("erro", "Email ou senha inválidos");
-             return "login";
+             return "views/clientes/login";
         }
     }
 

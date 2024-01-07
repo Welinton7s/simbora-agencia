@@ -11,7 +11,7 @@
     <!--Inicio do cabeçalho-->
     <header>
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark>
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container-fluid" >
                     <div class="navbar-brand d-flex align-items-center">
                         <a href="../HTML/index.html">SIMBORA</a>
@@ -44,19 +44,20 @@
                 
                 <div class="cards row justify-content-center">
                     <div class="d-flex flex-column justify-content-center align-items-center text-center">
-                        <form action="" class="card mx-auto border border-dark border-3" style=" background-color: #f3f3f3; ">
-                            <div class="form-group card-body d-flex flex-column align-items-center">
-                                <label for="saida">De onde você está saindo?</label>
-                                <input id="saida" type="search" class="form-control">
-                                <label for="destino">Para onde você vai?</label>
-                                <input id="destino" type="search" class="form-control">
-                                <label for="data">Escolha as datas</label>
-                                <input id="data" type="date" class="form-control">
-                                <label for="Passageiros">Passageiros</label>
-                                <input id="Passageiros" type="number" class="form-control"><br>
-                                <button class="btn btn-success">Buscar</button>
-                            </div>
-                        </form>
+                        <form action="/buscar" method="post" class="card mx-auto border border-dark border-3" style="background-color: #f3f3f3;">
+						    <div class="form-group card-body d-flex flex-column align-items-center">
+						        <label for="saida">De onde você está saindo?</label>
+						        <input id="saida" name="saida" type="search" class="form-control">
+						        <label for="destino">Para onde você vai?</label>
+						        <input id="destino" name="destino" type="search" class="form-control">
+						        <label for="data">Escolha as datas</label>
+						        <input id="data" name="data" type="date" class="form-control">
+						        <label for="Passageiros">Passageiros</label>
+						        <input id="Passageiros" name="passageiros" type="number" class="form-control"><br>
+						        <button class="btn btn-success">Buscar</button>
+						    </div>
+						</form>
+
                     </div>
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="../imagens/presidente-dutra.jpg" alt="Card image cap">

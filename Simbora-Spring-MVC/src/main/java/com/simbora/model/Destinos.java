@@ -1,61 +1,28 @@
 package com.simbora.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
+@Table(name = "destino")
 public class Destinos {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "partida")
     private String saida;
+
+    @Column(name = "destino")
     private String destino;
-    private String data;
-    private String passageiros;
+
+    @Column(name = "data")
+    private Date data;
+
+    @Column(name = "quantidade_de_passageiros")
+    private Integer passageiros;
 
     // Getters e setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSaida() {
-        return saida;
-    }
-
-    public void setSaida(String saida) {
-        this.saida = saida;
-    }
-
-    public String getDestino() {
-        return destino;
-    }
-
-    public void setDestino(String destino) {
-        this.destino = destino;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public String getPassageiros() {
-        return passageiros;
-    }
-
-    public void setPassageiros(String passageiros) {
-        this.passageiros = passageiros;
-    }
 }
-
