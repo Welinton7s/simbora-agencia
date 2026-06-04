@@ -1,0 +1,212 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    min-height: 90vh;
+}
+
+/* container de home, destinos e contato */
+
+#home .container,
+#destinos .container,
+#contato .container
+#login .container{
+    padding: 2rem;
+}
+
+/* Cabeçalho e menu*/
+
+header{
+    background-color: #242424;
+}
+
+.navbar-brand {
+    cursor: pointer;
+}
+
+.navbar-brand a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-brand img{
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+header .container .navbar .navbar-nav a{
+    color: #828282;
+}
+
+header .container .navbar .navbar-nav a:hover{
+    border-bottom: 1px solid #828282;
+    color: #fff;
+}
+
+/* Home */
+
+#home, #cadastro, #destinos, #contato, #promocao, #login{
+    background-image: url(../imagens/beach-666122_1280.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.login{
+    margin-bottom: 1rem;
+}
+
+.login, .cadastrar{
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
+}
+
+/*Login*/
+
+#login .container{
+    color: #fff;
+}
+
+#login .container .d-flex form{
+    width: 20rem;
+    color: #fff;
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
+}
+
+#login .container .d-flex form input{
+    background-color: #121212;
+    border: 0.10rem solid #2A2B2C;
+    color: #fff;
+}
+
+#login .container .d-flex form button{
+    margin-top: 1rem;
+}
+
+.btn-novaSenha {
+    margin-top: 1rem;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: #828282;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-novaSenha:hover {
+    background-color: #5a5a5a;
+}
+
+/*Destinos*/
+
+#destinos .container{
+    color: #fff;
+}
+
+#destinos .cards .card img{
+    height: 20rem;
+}
+
+#destinos .cards .card{
+    background-color: #f3f3f3;
+    border: 0.15rem solid #000 ;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+/* Promoções */
+
+#promocao .container{
+    color: #fff;
+}
+
+#promocao .container h2{
+    margin-bottom: 2rem;
+}
+
+#promocao button span{
+    background-color: #000;
+}
+
+#promocao .carousel-item img{
+    height: 40rem;
+}
+
+#promocao .carousel-item h5,
+#promocao .carousel-item p{
+    color: #000;
+    background-color: #fff;
+}
+
+#promocao .carousel-item .risco{
+    text-decoration: line-through;
+}
+
+/* Contato */
+
+#contato .container{
+    color: #fff;
+}
+
+#contato .container .card{
+    margin: 1rem;
+}
+
+#contato .container form textarea{
+    resize: none;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+}
+
+#contato .container .card{
+    border: 0.15rem solid #000;
+}
+
+#contato .container .card-body a{
+    text-decoration: none;
+}
+
+/*cadastro*/
+
+#cadastro .container{
+    color: #fff;
+}
+
+#cadastro .container .d-flex{
+    padding-top: 2rem;
+}
+
+#cadastro .container .d-flex form{
+    width: 20rem;
+    color: #fff;
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
+}
+
+#cadastro .container .d-flex form input{
+    background-color: #121212;
+    border: 0.10rem solid #2A2B2C;
+    color: #fff
+}
+
+#cadastro .container .d-flex form button{
+    margin-top: 1rem;
+}
+
+/* Rodapé */
+
+footer{
+    background-color:  #242424;
+    color: #fff;
+    height: 10rem;
+}
