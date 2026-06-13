@@ -156,8 +156,11 @@ header .container .navbar .navbar-nav a:hover{
     color: #fff;
 }
 
-#contato .container .card{
+#contato .container .card , #contato .container form{
     margin: 1rem;
+    border: 0.15rem solid #000;
+    background-color: #242424;
+    color: #fff;
 }
 
 #contato .container form textarea{
@@ -167,9 +170,6 @@ header .container .navbar .navbar-nav a:hover{
     padding: 1rem;
 }
 
-#contato .container .card{
-    border: 0.15rem solid #000;
-}
 
 #contato .container .card-body a{
     text-decoration: none;
