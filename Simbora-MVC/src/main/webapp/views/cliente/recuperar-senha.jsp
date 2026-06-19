@@ -1,11 +1,3 @@
-<%@ page import="model.Cliente" %>
-<%
-Cliente clienteJaLogado = (Cliente) session.getAttribute("clienteLogado");
-if (clienteJaLogado != null) {
-    response.sendRedirect(request.getContextPath() + "/views/destino/destinos.jsp");
-    return;
-}
-%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-Br">
@@ -14,7 +6,7 @@ if (clienteJaLogado != null) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/style.css">
-    <title>Simbora</title>
+    <title>Simbora - Recuperar Senha</title>
 </head>
 <body>
     <header>
@@ -24,35 +16,33 @@ if (clienteJaLogado != null) {
         <section id="login">
             <div class="container">
                 <div class="d-flex flex-column justify-content-center align-items-center text-center">
-                    <h2>Acessar</h2>
-                    <%
-                    String sucesso = (String) request.getAttribute("mensagemSucesso");
-                    if (sucesso != null) { %>
+                    <h2>Recuperar Senha</h2>
+                    <% String sucesso = (String) request.getAttribute("mensagemSucesso");
+                       if (sucesso != null) { %>
                         <div class="alert alert-success mt-2" style="width: 20rem;">
                             <%= sucesso %>
                         </div>
-                    <% }
-                    String erro = (String) request.getAttribute("mensagemErro");
-                    if (erro != null) { %>
+                    <% } %>
+                    <% String erro = (String) request.getAttribute("mensagemErro");
+                       if (erro != null) { %>
                         <div class="alert alert-danger mt-2" style="width: 20rem;">
                             <%= erro %>
                         </div>
                     <% } %>
-                    <form action="${pageContext.request.contextPath}/login" method="post" class="card mx-auto border border-dark border-3" style="width: 20rem;">
+                    <form action="${pageContext.request.contextPath}/recuperar-senha" method="post" class="card mx-auto">
                         <div class="form-group card-body d-flex flex-column align-items-center">
+                            <p class="text-white mb-3">Digite seu e-mail cadastrado e enviaremos as instruções para redefinir sua senha.</p>
                             <label for="email">Email</label>
-                            <input id="email" name="email" type="email" class="form-control" required>
-                            <label for="senha">Senha</label>
-                            <input id="senha" name="senha" type="password" class="form-control" required>
-                            <button type="submit" class="btn btn-success mt-2">Entrar</button>
-                            <a href="${pageContext.request.contextPath}/views/cliente/recuperar-senha.jsp" class="btn-novaSenha">Esqueceu sua senha?</a>
+                            <input id="email" name="email" type="email" required class="form-control">
+                            <button class="btn btn-success mt-2">Enviar</button>
+                            <a href="${pageContext.request.contextPath}/views/cliente/login.jsp" class="btn-novaSenha">Voltar ao login</a>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-    <%@ include file="../../components/footer.jsp" %>
+   <%@ include file="../../components/footer.jsp" %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

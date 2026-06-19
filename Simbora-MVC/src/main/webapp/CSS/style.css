@@ -1,153 +1,251 @@
-*{
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-section{
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+section {
     min-height: 90vh;
 }
 
-/* container de home, destinos e contato */
-
+/* Container de home, destinos e contato */
 #home .container,
 #destinos .container,
-#contato .container
-#login .container{
+#contato .container,
+#login .container {
     padding: 2rem;
 }
 
-/* Cabeçalho e menu*/
+/* Cabeçalho e menu */
 
-header{
-    background-color: #f3f3f3;
+header {
+    background-color: #242424;
 }
 
 .navbar-brand {
     cursor: pointer;
 }
 
-.navbar-brand a{
+.navbar-brand a {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 2.5rem;
     border-radius: 50%;
 }
 
-header .container .navbar .navbar-nav a:hover{
-    border-bottom: 1px solid #000;
-    color: #000;
+header .container .navbar .navbar-nav a {
+    color: #828282;
 }
 
-/* Home */
+header .container .navbar .navbar-nav a:hover {
+    border-bottom: 1px solid #828282;
+    color: #fff;
+}
 
-#home, #cadastro, #destinos, #contato, #promocao, #login{
+/* Background geral */
+#home, #cadastro, #destinos, #contato, #promocao, #login, #passagens {
     background-image: url(../imagens/beach-666122_1280.jpg);
     background-size: cover;
     background-position: center;
 }
 
+/* Home */
+#home .login,
+#home .cadastrar {
+    background-color: #242424 !important;
+    border: 0.10rem solid #828282 !important;
+    border-radius: 0.5rem !important;
+    color: #fff !important;
+}
 
-.login{
+#home .login h2,
+#home .login p,
+#home .cadastrar h2,
+#home .cadastrar p {
+    color: #fff !important;
+}
+
+/* Login */
+.login {
     margin-bottom: 1rem;
 }
 
-.login, .cadastrar{
-    background-color: #f3f3f3;
+.login, .cadastrar {
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
 }
 
-/*Login*/
-
-#login .container{
+#login .container {
     color: #fff;
 }
 
-/*Destinos*/
+#login .container .d-flex form {
+    width: 20rem;
+    color: #fff;
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
+}
 
-#destinos .container{
+#login .container .d-flex form input {
+    background-color: #121212;
+    border: 0.10rem solid #2A2B2C;
     color: #fff;
 }
 
-#destinos .cards .card img{
-    height: 20rem;
+#login .container .d-flex form button {
+    margin-top: 1rem;
 }
 
-#destinos .cards .card{
+.btn-novaSenha {
+    margin-top: 1rem;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: #828282;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-novaSenha:hover {
+    background-color: #5a5a5a;
+}
+
+/* Destinos */
+#destinos .container {
+    color: #fff;
+}
+
+#destinos .card {
     background-color: #f3f3f3;
-    border: 0.15rem solid #000 ;
+    border: 0.15rem solid #000;
     cursor: pointer;
-    margin: 1rem;
+}
+
+#destinos .card img {
+    height: 12rem !important;
+    object-fit: cover !important;
 }
 
 /* Promoções */
-
-#promocao .container{
+#promocao .container {
     color: #fff;
 }
 
-#promocao .container h2{
+#promocao .container h2 {
     margin-bottom: 2rem;
 }
 
-#promocao button span{
+#promocao button span {
     background-color: #000;
 }
 
-#promocao .carousel-item img{
-    height: 40rem;
+#promocao .carousel-item img {
+    height: 28rem;
+    object-fit: cover;
 }
 
 #promocao .carousel-item h5,
-#promocao .carousel-item p{
+#promocao .carousel-item p:not(.btn) {
     color: #000;
     background-color: #fff;
 }
 
-#promocao .carousel-item .risco{
+#promocao .carousel-item .risco {
     text-decoration: line-through;
 }
 
 /* Contato */
-
-#contato .container{
+#contato .container {
     color: #fff;
 }
 
-#contato .container .card{
+#contato .container .card,
+#contato .container form {
     margin: 1rem;
+    border: 0.15rem solid #000;
+    background-color: #242424;
+    color: #fff;
 }
 
-#contato .container form textarea{
+#contato .container form textarea {
     resize: none;
     width: 100%;
     height: 10rem;
     padding: 1rem;
 }
 
-#contato .container .card{
-    border: 0.15rem solid #000;
-}
-
-#contato .container .card-body a{
+#contato .container .card-body a {
     text-decoration: none;
 }
 
-/*cadastro*/
-
-#cadastro .container{
+/* Cadastro */
+#cadastro .container {
     color: #fff;
 }
 
-#cadastro .container .d-flex{
+#cadastro .container .d-flex {
     padding-top: 2rem;
 }
 
-/* Rodapé */
+#cadastro .container .d-flex form {
+    width: 20rem;
+    color: #fff;
+    background-color: #242424;
+    border: 0.10rem solid #828282;
+    border-radius: 0.5rem;
+}
 
-footer{
-    background-color:  #f3f3f3;
+#cadastro .container .d-flex form input {
+    background-color: #121212;
+    border: 0.10rem solid #2A2B2C;
+    color: #fff;
+}
+
+#cadastro .container .d-flex form button {
+    margin-top: 1rem;
+}
+
+/* Passagens */
+#passagens .container {
+    color: #fff;
+}
+
+#passagens .card {
+    background-color: #f3f3f3;
+    border: 0.15rem solid #000;
+}
+
+/* Rodapé */
+footer {
+    background-color: #242424;
+    color: #fff;
     height: 10rem;
 }

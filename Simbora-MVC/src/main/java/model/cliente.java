@@ -2,7 +2,7 @@ package model;
 
 import java.util.*;
 
-public class cliente {
+public class Cliente {
 
 	private Integer id;
 	private String nome;
@@ -10,10 +10,10 @@ public class cliente {
 	private String senha;
 	private String telefone;
 
-	public cliente() {
+	public Cliente() {
 	}
 
-	public cliente(Integer id, String nome, String email, String senha, String telefone) {
+	public Cliente(Integer id, String nome, String email, String senha, String telefone) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,7 +22,7 @@ public class cliente {
 		this.telefone = telefone;
 	}
 
-	public cliente(String nome, String email, String senha, String telefone) {
+	public Cliente(String nome, String email, String senha, String telefone) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;

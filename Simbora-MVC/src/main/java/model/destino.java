@@ -1,6 +1,6 @@
 package model;
 
-public class destino {
+public class Destino {
 	private String partida;
 	private String destino;
 	private String data;

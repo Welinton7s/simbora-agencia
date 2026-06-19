@@ -2,10 +2,10 @@ package connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class conexão {
+public class conexao {
 	private static String URL = "jdbc:mysql://localhost:3306/simbora";
-	private static String USUARIO = "root";
-	private static String SENHA = "zero0034";
+	private static String USUARIO = "";
+	private static String SENHA = "";
 
 	public static Connection createConnectionMySQL() throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");

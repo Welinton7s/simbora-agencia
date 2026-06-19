@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="model.Cliente" %>
+<%
+Cliente clienteLogado = (Cliente) session.getAttribute("clienteLogado");
+if (clienteLogado == null) {
+    response.sendRedirect(request.getContextPath() + "/views/cliente/login.jsp");
+    return;
+}
+%>
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/style.css">
+    <title>Simbora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <%@ include file="../../components/menu.jsp" %>
+    </header>
+    <main>
+        <section id="promocao" style="min-height: 90vh;">
+            <div class="container">
+                <div class="d-flex flex-column align-items-center text-center">
+                    <h2>Promoções</h2>
+                    <p>A SIMBORA tem as melhores ofertas de pacotes de viagem. Economize muito com as melhores ofertas de viagens</p>
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner" style="width: 100%; max-width: 600px;">
+                            <div class="carousel-item active">
+                                <img src="${pageContext.request.contextPath}/imagens/presidente-dutra.jpg" class="d-block mx-auto" alt="Presidente Dutra">
+                                <div class="carousel-caption mx-auto">
+                                    <h5>Presidente Dutra</h5>
+                                    <p>De R$ <span class="risco">2.000</span></p>
+                                    <p>Por R$1.000</p>
+                                    <button class="btn btn-success btn-sm mt-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalDestino"
+                                        data-destino="Presidente Dutra">
+                                        Escolher este destino
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="${pageContext.request.contextPath}/imagens/konoha.jpg" class="d-block mx-auto" alt="Konoha">
+                                <div class="carousel-caption mx-auto">
+                                    <h5>Konoha</h5>
+                                    <p>De R$ <span class="risco">4.000</span></p>
+                                    <p>Por R$3.000</p>
+                                    <button class="btn btn-success btn-sm mt-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalDestino"
+                                        data-destino="Konoha">
+                                        Escolher este destino
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="${pageContext.request.contextPath}/imagens/pexels-marcin-gierbisz-1125212.jpg" class="d-block mx-auto" alt="Paris">
+                                <div class="carousel-caption mx-auto">
+                                    <h5>Paris</h5>
+                                    <p>De R$ <span class="risco">5.000</span></p>
+                                    <p>Por R$4.000</p>
+                                    <button class="btn btn-success btn-sm mt-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalDestino"
+                                        data-destino="Paris">
+                                        Escolher este destino
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="${pageContext.request.contextPath}/imagens/pexels-michelle-guimarães-3648269.jpg" class="d-block mx-auto" alt="Rio de Janeiro">
+                                <div class="carousel-caption mx-auto">
+                                    <h5>Rio de Janeiro</h5>
+                                    <p>De R$ <span class="risco">3.000</span></p>
+                                    <p>Por R$2.000</p>
+                                    <button class="btn btn-success btn-sm mt-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalDestino"
+                                        data-destino="Rio de Janeiro">
+                                        Escolher este destino
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalDestino" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservar Passagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form action="${pageContext.request.contextPath}/destino-cadastrar" method="post">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">De onde você está saindo?</label>
+                            <input type="text" class="form-control" name="saida" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Para onde você vai?</label>
+                            <input type="text" class="form-control" name="destino" id="inputDestino" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Data</label>
+                            <input type="date" class="form-control" name="data" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Passageiros</label>
+                            <input type="number" class="form-control" name="Passageiros" min="1" value="1" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+	<%@ include file="../../components/footer.jsp" %>	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modalDestino = document.getElementById('modalDestino');
+        modalDestino.addEventListener('show.bs.modal', function(event) {
+            const btn = event.relatedTarget;
+            const destino = btn.getAttribute('data-destino');
+            document.getElementById('inputDestino').value = destino;
+        });
+    </script>
+</body>
+</html>

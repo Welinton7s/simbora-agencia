@@ -8,33 +8,33 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import dao.ClienteDao;
 import model.Cliente;
-import org.mindrot.jbcrypt.BCrypt;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/recuperar-senha")
+public class recuperarSenhaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClienteDao clienteDao = new ClienteDao();
 
-    public LoginServlet() {
+    public recuperarSenhaServlet() {
         super();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
 
         try {
             Cliente cliente = clienteDao.consultarPorEmail(email);
-            if (cliente != null && BCrypt.checkpw(senha, cliente.getSenha())) {
-                request.getSession().setAttribute("clienteLogado", cliente);
-                response.sendRedirect(request.getContextPath() + "/views/destino/destinos.jsp");
+
+            if (cliente != null) {
+                request.setAttribute("mensagemSucesso", "Instruções enviadas para " + email + ". Verifique sua caixa de entrada.");
             } else {
-                request.setAttribute("mensagemErro", "E-mail ou senha inválidos.");
-                request.getRequestDispatcher("/views/cliente/login.jsp").forward(request, response);
+                request.setAttribute("mensagemErro", "E-mail não encontrado. Verifique e tente novamente.");
             }
         } catch (Exception e) {
             e.printStackTrace();
+            request.setAttribute("mensagemErro", "Erro ao processar. Tente novamente.");
+        } finally {
+            request.getRequestDispatcher("/views/cliente/recuperar-senha.jsp").forward(request, response);
         }
     }
 }
