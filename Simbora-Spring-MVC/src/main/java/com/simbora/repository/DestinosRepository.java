@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.simbora.model.Destinos;
 
-public interface DestinosRepository extends JpaRepository<Destinos, Long> {
+public interface DestinosRepository extends JpaRepository<Destinos, Integer> {
     // Você pode adicionar métodos de consulta personalizados aqui, se necessário
 }
-

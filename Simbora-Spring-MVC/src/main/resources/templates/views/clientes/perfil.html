@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-Br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/CSS/style.css}">
+    <title>Simbora - Meu Perfil</title>
+</head>
+<body>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<main>
+    <section id="login">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center align-items-center text-center">
+                <h2>Meu Perfil</h2>
+                <div th:if="${mensagemSucesso}" class="alert alert-success mt-2" style="width: 22rem;" th:text="${mensagemSucesso}"></div>
+                <div th:if="${mensagemErro}" class="alert alert-danger mt-2" style="width: 22rem;" th:text="${mensagemErro}"></div>
+                <form th:action="@{/perfil}" method="post" class="card mx-auto" style="width: 22rem; background-color: #242424; border: 0.10rem solid #828282; border-radius: 0.5rem;">
+                    <div class="form-group card-body d-flex flex-column align-items-center">
+                        <label for="nome" style="color: #fff;">Nome</label>
+                        <input id="nome" name="nome" type="text" class="form-control" style="background-color: #121212; border: 0.10rem solid #2A2B2C; color: #fff;" th:value="${cliente.nome}" required>
+                        <label for="email" style="color: #fff;">Email</label>
+                        <input id="email" name="email" type="email" class="form-control" style="background-color: #121212; border: 0.10rem solid #2A2B2C; color: #fff;" th:value="${cliente.email}" required>
+                        <label for="telefone" style="color: #fff;">Telefone</label>
+                        <input id="telefone" name="telefone" type="tel" class="form-control" style="background-color: #121212; border: 0.10rem solid #2A2B2C; color: #fff;" th:value="${cliente.telefone}">
+                        <hr style="width: 100%; border-color: #828282;">
+                        <p class="mb-1" style="color: #fff;">Alterar senha (opcional)</p>
+                        <label for="senhaAtual" style="color: #fff;">Senha Atual</label>
+                        <input id="senhaAtual" name="senhaAtual" type="password" class="form-control" style="background-color: #121212; border: 0.10rem solid #2A2B2C; color: #fff;">
+                        <label for="novaSenha" style="color: #fff;">Nova Senha</label>
+                        <input id="novaSenha" name="novaSenha" type="password" class="form-control" style="background-color: #121212; border: 0.10rem solid #2A2B2C; color: #fff;">
+                        <button type="submit" class="btn btn-success mt-2">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

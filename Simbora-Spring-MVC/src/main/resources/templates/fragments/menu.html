@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-Br" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="menu">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242424;">
+            <div class="container-fluid">
+                <div class="navbar-brand d-flex align-items-center">
+                    <a th:href="@{/home}">SIMBORA</a>
+                    <img th:src="@{/imagens/travel-6913775_1280.png}" alt="Logo do Simbora" style="height: 40px; margin-left: 8px;">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" th:href="@{/home}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/destinos}">Destinos</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/promocao}">Promoções</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/contato}">Contato</a></li>
+
+                        <!-- Itens visíveis somente quando há cliente logado na sessão -->
+                        <th:block th:if="${session.clienteLogado != null}">
+                            <li class="nav-item"><a class="nav-link" th:href="@{/passagens}">Minhas Passagens</a></li>
+                            <li class="nav-item"><a class="nav-link" th:href="@{/perfil}" th:text="${session.clienteLogado.nome}">Cliente</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" th:href="@{/logout}">Sair</a></li>
+                        </th:block>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+</body>
+</html>

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.simbora.model.Clientes;
 
 @Repository
-public interface ClientesRepository extends JpaRepository<Clientes, Long> {
+public interface ClientesRepository extends JpaRepository<Clientes, Integer> {
 
-	Clientes findByEmail(String email);
+    Clientes findByEmail(String email);
 }
